@@ -1,1 +1,1655 @@
 @import "tailwindcss";
+
+/* ============================================================
+   EGYPTIAN TV 90s - RETRO CRT TELEVISION STYLES
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Cairo:wght@400;600;700;900&display=swap');
+
+:root {
+  --tv-brown: #3D2B1F;
+  --tv-dark-brown: #2A1A10;
+  --tv-beige: #C8A882;
+  --tv-cream: #E8D5B7;
+  --tv-gold: #D4A017;
+  --tv-screen-bg: #0A0A0A;
+  --tv-green: #00FF41;
+  --tv-amber: #FFB000;
+  --tv-red: #FF3333;
+  --tv-blue: #0066FF;
+  --scanline-color: rgba(0, 0, 0, 0.15);
+  --crt-glow: rgba(0, 255, 65, 0.05);
+  --phosphor-green: #33FF33;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0D0D0D;
+  font-family: 'Cairo', 'VT323', monospace;
+}
+
+/* ============================================================
+   MAIN WRAPPER
+   ============================================================ */
+
+.retro-tv-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: 
+    radial-gradient(ellipse at center, #1a0a00 0%, #0D0D0D 70%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.1) 2px,
+      rgba(0,0,0,0.1) 4px
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient room glow */
+.retro-tv-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 140, 0, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   TV CABINET
+   ============================================================ */
+
+.tv-cabinet {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Wooden cabinet look */
+  background: linear-gradient(
+    135deg,
+    #5C3D2E 0%,
+    #3D2B1F 20%,
+    #2A1A10 40%,
+    #3D2B1F 60%,
+    #4A2E1A 80%,
+    #3D2B1F 100%
+  );
+  
+  border-radius: 20px 20px 8px 8px;
+  padding: 24px 28px 20px;
+  
+  /* Wood grain texture */
+  box-shadow:
+    inset 0 2px 4px rgba(255, 200, 100, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 3px #2A1A10,
+    0 0 0 5px #4A3020,
+    0 0 0 7px #2A1A10;
+  
+  max-width: 900px;
+  width: 95vw;
+  
+  /* Wood grain pattern */
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.05) 3px,
+      rgba(0,0,0,0.05) 6px
+    ),
+    linear-gradient(
+      135deg,
+      #5C3D2E 0%,
+      #3D2B1F 20%,
+      #2A1A10 40%,
+      #3D2B1F 60%,
+      #4A2E1A 80%,
+      #3D2B1F 100%
+    );
+}
+
+/* ============================================================
+   TV SCREEN BEZEL
+   ============================================================ */
+
+.tv-screen-bezel {
+  width: 100%;
+  background: linear-gradient(145deg, #1A1A1A, #0D0D0D, #1A1A1A);
+  border-radius: 12px;
+  padding: 16px;
+  
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.9),
+    inset 0 2px 4px rgba(255, 255, 255, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  
+  border: 3px solid #111;
+  position: relative;
+}
+
+/* Screen aspect ratio container */
+.tv-screen {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  background: var(--tv-screen-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  
+  /* CRT screen curvature shadow */
+  box-shadow:
+    inset 0 0 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 0, 0, 0.9);
+  
+  /* Slight screen curve effect */
+  border-radius: 12px / 8px;
+}
+
+.tv-screen > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   SCREEN STATES
+   ============================================================ */
+
+/* Power Off */
+.screen-off {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.power-dot {
+  width: 4px;
+  height: 4px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #333;
+}
+
+/* Loading Screen */
+.screen-loading {
+  position: relative;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--tv-amber);
+  font-family: 'VT323', monospace;
+  font-size: 28px;
+  text-shadow: 0 0 10px var(--tv-amber);
+}
+
+.arabic-text {
+  display: block;
+  font-family: 'Cairo', sans-serif;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.loading-dots span {
+  animation: blink 1s infinite;
+  font-size: 20px;
+}
+
+.loading-dots span:nth-child(2) { animation-delay: 0.3s; }
+.loading-dots span:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* ============================================================
+   SCANLINES & CRT EFFECTS
+   ============================================================ */
+
+.scanlines-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  pointer-events: none;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+
+.crt-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+  pointer-events: none;
+  z-index: 101;
+}
+
+/* CRT flicker animation */
+@keyframes crt-flicker {
+  0% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.95; }
+  94% { opacity: 1; }
+  96% { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+.tv-screen {
+  animation: crt-flicker 8s infinite;
+}
+
+/* ============================================================
+   STATIC NOISE
+   ============================================================ */
+
+.static-noise-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.static-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.static-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+.static-flicker {
+  position: absolute;
+  inset: 0;
+  animation: static-flicker 0.1s infinite;
+  pointer-events: none;
+}
+
+@keyframes static-flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+/* ============================================================
+   DVD BOUNCER
+   ============================================================ */
+
+.dvd-bouncer-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.dvd-background {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+.corner-flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  animation: corner-flash 0.3s ease-out;
+  pointer-events: none;
+}
+
+@keyframes corner-flash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.dvd-logo {
+  position: absolute;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.dvd-logo-text {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.dvd-logo-subtitle {
+  font-family: 'Cairo', sans-serif;
+  font-size: 10px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+.dvd-logo-year {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.dvd-loading-message {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+}
+
+.dvd-msg-arabic {
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.dvd-msg-english {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.dvd-msg-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.dvd-msg-dots span {
+  animation: blink 1.2s infinite;
+}
+
+.dvd-msg-dots .dot-2 { animation-delay: 0.4s; }
+.dvd-msg-dots .dot-3 { animation-delay: 0.8s; }
+
+.dvd-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.1) 3px,
+    rgba(0, 0, 0, 0.1) 6px
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   VIDEO PLAYER
+   ============================================================ */
+
+.video-container {
+  position: absolute;
+  inset: 0;
+}
+
+.youtube-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ============================================================
+   CHANNEL BANNER
+   ============================================================ */
+
+.channel-banner {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid var(--tv-amber);
+  border-radius: 6px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 200;
+  animation: banner-slide-in 0.3s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes banner-slide-in {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.channel-number {
+  font-family: 'VT323', monospace;
+  font-size: 32px;
+  color: var(--tv-amber);
+  text-shadow: 0 0 10px var(--tv-amber);
+  min-width: 60px;
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.channel-icon {
+  font-size: 24px;
+}
+
+.channel-name-ar {
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.channel-name-en {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================================
+   VOLUME BAR
+   ============================================================ */
+
+.volume-bar-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--tv-amber);
+  border-radius: 4px;
+  padding: 8px 16px;
+  min-width: 200px;
+  z-index: 200;
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(5px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.volume-label {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: var(--tv-amber);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.volume-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.volume-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tv-amber), #FFD700);
+  border-radius: 3px;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 8px var(--tv-amber);
+}
+
+/* ============================================================
+   NOW PLAYING BAR
+   ============================================================ */
+
+.now-playing-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px 16px 8px;
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tv-screen:hover .now-playing-bar {
+  opacity: 1;
+}
+
+.now-playing-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.now-playing-label {
+  color: var(--tv-amber);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+}
+
+.now-playing-title {
+  font-weight: 600;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.now-playing-year {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+}
+
+/* ============================================================
+   TV CONTROLS PANEL
+   ============================================================ */
+
+.tv-controls {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 8px 8px;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   KNOBS
+   ============================================================ */
+
+.controls-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 80px;
+}
+
+.knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.knob-label {
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  color: var(--tv-cream);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.knob {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #555, #222, #111);
+  border: 3px solid #444;
+  position: relative;
+  cursor: pointer;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  transition: transform 0.1s ease;
+}
+
+.knob:hover {
+  transform: scale(1.05);
+}
+
+.knob:active {
+  transform: scale(0.95);
+}
+
+.knob-indicator {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 12px;
+  background: var(--tv-amber);
+  border-radius: 2px;
+  box-shadow: 0 0 4px var(--tv-amber);
+  transform-origin: bottom center;
+}
+
+.channel-knob .knob-indicator {
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.knob-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.knob-btn {
+  width: 24px;
+  height: 20px;
+  background: linear-gradient(145deg, #444, #222);
+  border: 1px solid #555;
+  border-radius: 3px;
+  color: var(--tv-cream);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  font-family: 'VT323', monospace;
+}
+
+.knob-btn:hover {
+  background: linear-gradient(145deg, #555, #333);
+  color: var(--tv-amber);
+}
+
+.knob-btn:active {
+  transform: translateY(1px);
+  background: linear-gradient(145deg, #333, #111);
+}
+
+/* ============================================================
+   CHANNEL PRESET BUTTONS
+   ============================================================ */
+
+.controls-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.channel-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.channel-preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 4px;
+  
+  background: linear-gradient(145deg, #3A3A3A, #1A1A1A);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.channel-preset-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ch-color, #FFD700);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.channel-preset-btn:hover::before {
+  opacity: 0.1;
+}
+
+.channel-preset-btn.active {
+  background: linear-gradient(145deg, #2A2A2A, #111);
+  box-shadow:
+    0 0 12px var(--ch-color, #FFD700),
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.channel-preset-btn.active::before {
+  opacity: 0.15;
+}
+
+.channel-preset-btn:hover {
+  transform: translateY(-1px);
+}
+
+.channel-preset-btn:active {
+  transform: translateY(1px);
+}
+
+.ch-btn-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ch-btn-num {
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+}
+
+.ch-btn-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.channel-preset-btn.active .ch-btn-name {
+  color: #fff;
+}
+
+/* ============================================================
+   RIGHT CONTROLS
+   ============================================================ */
+
+.controls-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 90px;
+}
+
+/* Power Button */
+.power-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 3px solid #444;
+  position: relative;
+  overflow: hidden;
+}
+
+.power-button.off {
+  background: radial-gradient(circle at 35% 35%, #444, #222, #111);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+.power-button.on {
+  background: radial-gradient(circle at 35% 35%, #553300, #331100, #220000);
+  border-color: #FF4400;
+  box-shadow:
+    0 0 20px rgba(255, 68, 0, 0.6),
+    0 0 40px rgba(255, 68, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 100, 0, 0.2);
+  animation: power-pulse 2s infinite;
+}
+
+@keyframes power-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 68, 0, 0.6), 0 0 40px rgba(255, 68, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 68, 0, 0.8), 0 0 60px rgba(255, 68, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.5); }
+}
+
+.power-button:hover {
+  transform: scale(1.05);
+}
+
+.power-button:active {
+  transform: scale(0.95);
+}
+
+.power-icon {
+  font-size: 24px;
+  color: var(--tv-cream);
+  line-height: 1;
+}
+
+.power-button.on .power-icon {
+  color: #FF6633;
+  text-shadow: 0 0 10px #FF4400;
+}
+
+.power-label {
+  font-family: 'VT323', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background: linear-gradient(145deg, #3A3A3A, #1A1A1A);
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: var(--tv-cream);
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.action-btn span:first-child {
+  font-size: 14px;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: linear-gradient(145deg, #4A4A4A, #2A2A2A);
+  color: var(--tv-amber);
+  border-color: var(--tv-amber);
+}
+
+.action-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Brightness Control */
+.brightness-control {
+  width: 100%;
+}
+
+.brightness-label {
+  font-family: 'VT323', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.brightness-slider {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, #222, var(--tv-amber));
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.brightness-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tv-amber);
+  cursor: pointer;
+  box-shadow: 0 0 4px var(--tv-amber);
+}
+
+/* ============================================================
+   TV BRAND LABEL
+   ============================================================ */
+
+.tv-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  margin-top: 4px;
+}
+
+.brand-arabic {
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--tv-gold);
+  text-shadow: 0 0 8px rgba(212, 160, 23, 0.5);
+  letter-spacing: 2px;
+}
+
+.brand-english {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tv-cream);
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.brand-model {
+  font-family: 'VT323', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   TV LEGS
+   ============================================================ */
+
+.tv-legs {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: -4px;
+}
+
+.tv-leg {
+  width: 20px;
+  height: 24px;
+  background: linear-gradient(180deg, #3D2B1F, #2A1A10);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   KEYBOARD SHORTCUTS HELP
+   ============================================================ */
+
+.keyboard-help {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* ============================================================
+   CHANNEL GUIDE OVERLAY
+   ============================================================ */
+
+.channel-guide-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 500;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  backdrop-filter: blur(4px);
+}
+
+.channel-guide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Cairo', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Guide Header */
+.guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #1A0A00, #2A1500, #1A0A00);
+  border-bottom: 2px solid var(--tv-amber);
+  flex-shrink: 0;
+}
+
+.guide-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.guide-title-ar {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--tv-amber);
+}
+
+.guide-title-en {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+}
+
+.guide-time {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: var(--tv-amber);
+  text-shadow: 0 0 8px var(--tv-amber);
+}
+
+.guide-close-btn {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.guide-close-btn:hover {
+  background: rgba(255, 68, 0, 0.3);
+  border-color: #FF4400;
+}
+
+/* Guide Search */
+.guide-search {
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.guide-search-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.guide-search-input:focus {
+  border-color: var(--tv-amber);
+  box-shadow: 0 0 8px rgba(255, 176, 0, 0.2);
+}
+
+.guide-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.search-spinner {
+  color: var(--tv-amber);
+  font-size: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Guide Body */
+.guide-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Channel List */
+.guide-channels-list {
+  width: 140px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guide-channels-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.guide-channels-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.guide-channels-list::-webkit-scrollbar-thumb {
+  background: var(--tv-amber);
+  border-radius: 2px;
+}
+
+.guide-channel-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  text-align: center;
+}
+
+.guide-channel-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--ch-color, #FFD700);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.guide-channel-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.guide-channel-item.active {
+  background: rgba(255, 176, 0, 0.1);
+}
+
+.guide-channel-item.active::before {
+  opacity: 1;
+}
+
+.guide-ch-num {
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.guide-ch-icon {
+  font-size: 20px;
+  margin: 2px 0;
+}
+
+.guide-ch-names {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.guide-ch-ar {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.guide-ch-en {
+  font-family: 'VT323', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+}
+
+.guide-ch-count {
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  color: var(--tv-amber);
+  margin-top: 2px;
+}
+
+/* Content Area */
+.guide-content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  min-width: 0;
+}
+
+.guide-content-area::-webkit-scrollbar {
+  width: 4px;
+}
+
+.guide-content-area::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.guide-content-area::-webkit-scrollbar-thumb {
+  background: var(--tv-amber);
+  border-radius: 2px;
+}
+
+.guide-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Cairo', sans-serif;
+}
+
+.guide-loading-spinner {
+  font-size: 32px;
+  color: var(--tv-amber);
+  animation: spin 1s linear infinite;
+}
+
+.guide-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.guide-empty-icon {
+  font-size: 40px;
+  opacity: 0.5;
+}
+
+.guide-empty-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.guide-empty-subtext {
+  font-family: 'VT323', monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Video Grid */
+.guide-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.guide-video-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.guide-video-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 176, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.guide-video-card.selected {
+  border-color: var(--tv-amber);
+  background: rgba(255, 176, 0, 0.1);
+  box-shadow: 0 0 12px rgba(255, 176, 0, 0.2);
+}
+
+.guide-video-thumb {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #111;
+  overflow: hidden;
+}
+
+.guide-thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-thumb-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: linear-gradient(135deg, #1A1A1A, #0D0D0D);
+}
+
+.guide-video-year {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--tv-amber);
+  font-family: 'VT323', monospace;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.guide-video-info {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guide-video-title-ar {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.guide-video-stars {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guide-video-duration {
+  font-family: 'VT323', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Preview Panel */
+.guide-preview {
+  width: 180px;
+  flex-shrink: 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.guide-preview-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.guide-preview-year {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: var(--tv-amber);
+}
+
+.guide-preview-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.guide-preview-stars,
+.guide-preview-director {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.guide-watch-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px;
+  background: linear-gradient(135deg, #FF6600, #CC4400);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.15s ease;
+  margin-top: auto;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4);
+}
+
+.guide-watch-btn span:last-child {
+  font-family: 'VT323', monospace;
+  font-size: 12px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.guide-watch-btn:hover {
+  background: linear-gradient(135deg, #FF7700, #DD5500);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 102, 0, 0.5);
+}
+
+/* Guide Footer */
+.guide-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'VT323', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.guide-footer-brand {
+  margin-left: auto;
+  color: var(--tv-amber);
+  font-size: 14px;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .tv-cabinet {
+    padding: 12px 12px 10px;
+    border-radius: 12px 12px 4px 4px;
+  }
+  
+  .tv-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .controls-left {
+    flex-direction: row;
+    min-width: unset;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .controls-center {
+    width: 100%;
+  }
+  
+  .channel-buttons-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .controls-right {
+    flex-direction: row;
+    min-width: unset;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+  }
+  
+  .brightness-control {
+    display: none;
+  }
+  
+  .guide-preview {
+    display: none;
+  }
+  
+  .guide-channels-list {
+    width: 100px;
+  }
+  
+  .keyboard-help {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .channel-buttons-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .ch-btn-name {
+    display: none;
+  }
+  
+  .guide-video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+}
+
+/* ============================================================
+   SCROLLBAR STYLES
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 176, 0, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tv-amber);
+}
+
+/* ============================================================
+   SELECTION STYLES
+   ============================================================ */
+
+::selection {
+  background: rgba(255, 176, 0, 0.3);
+  color: #fff;
+}
+
+/* ============================================================
+   AMBIENT GLOW EFFECT
+   ============================================================ */
+
+@keyframes ambient-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+.tv-screen-bezel::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  animation: ambient-glow 4s ease-in-out infinite;
+  z-index: -1;
+}

@@ -1,87 +1,76 @@
-# Active Context: Next.js Starter Template
+# Active Context: Egyptian TV 90s
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Project Status**: ✅ Egyptian TV 90s - Fully Built
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+The project has been transformed from a Next.js starter template into a full retro Egyptian TV 90s experience.
 
 ## Recently Completed
 
-- [x] Base Next.js 16 setup with App Router
-- [x] TypeScript configuration with strict mode
-- [x] Tailwind CSS 4 integration
-- [x] ESLint configuration
-- [x] Memory bank documentation
-- [x] Recipe system for common features
+- [x] Built retro CRT TV cabinet UI with wooden texture, knobs, and controls
+- [x] Created StaticNoise component with canvas-based TV static animation
+- [x] Created DVDBouncer component with bouncing DVD logo (color-changing)
+- [x] Created ChannelGuide component with searchable video grid
+- [x] Built RetroTV main component with full TV controls
+- [x] Built /api/content route using Invidious API for YouTube search
+- [x] Built /api/search route for direct search queries
+- [x] Created comprehensive Egyptian 90s content database with search terms
+- [x] Added CRT scanlines, vignette, and flicker effects
+- [x] Added channel banner, volume bar, now-playing bar overlays
+- [x] Added keyboard shortcuts (SPACE, arrows, +/-, M, G)
+- [x] Added 8 channel types: Movies, Series, Music, Comedy, Sports, Cartoons, Variety, Drama
+- [x] Configured next.config.ts for YouTube iframe and image domains
+- [x] Build passes, lint clean, typecheck passes
 
 ## Current Structure
 
 | File/Directory | Purpose | Status |
 |----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
-| `.kilocode/` | AI context & recipes | ✅ Ready |
+| `src/app/page.tsx` | Home page (renders TVWrapper) | ✅ Ready |
+| `src/app/layout.tsx` | Root layout with Arabic metadata | ✅ Ready |
+| `src/app/globals.css` | Full retro TV CSS (800+ lines) | ✅ Ready |
+| `src/components/RetroTV.tsx` | Main TV component with all controls | ✅ Ready |
+| `src/components/TVWrapper.tsx` | Client-side dynamic import wrapper | ✅ Ready |
+| `src/components/StaticNoise.tsx` | Canvas-based TV static noise | ✅ Ready |
+| `src/components/DVDBouncer.tsx` | DVD logo bouncer fallback screen | ✅ Ready |
+| `src/components/ChannelGuide.tsx` | Channel guide with search | ✅ Ready |
+| `src/app/api/content/route.ts` | Content API using Invidious | ✅ Ready |
+| `src/app/api/search/route.ts` | Search API using Invidious | ✅ Ready |
+| `src/lib/egyptianContent.ts` | Content types and channel definitions | ✅ Ready |
+| `next.config.ts` | YouTube iframe/image config | ✅ Ready |
 
-## Current Focus
+## Architecture
 
-The template is ready. Next steps depend on user requirements:
+### Content Strategy
+- Uses **Invidious API** (open-source YouTube frontend) to search for Egyptian 90s content
+- Multiple Invidious instances for redundancy (7 instances)
+- 27+ search queries per channel type (movies, series, music, comedy, sports, cartoons, variety, drama)
+- Pagination support - loads more content as user browses
+- Falls back to curated content if API unavailable
+- Background preloading of all channels after power-on
 
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+### TV UI Features
+- Wooden cabinet with CRT screen
+- Real TV controls: power button, channel knobs, volume knobs
+- 8 channel preset buttons with icons and Arabic names
+- Channel banner overlay when switching
+- Volume bar overlay
+- Now-playing bar (shows on hover)
+- Scanlines + CRT vignette + flicker effects
+- Keyboard shortcuts
 
-## Quick Start Guide
-
-### To add a new page:
-
-Create a file at `src/app/[route]/page.tsx`:
-```tsx
-export default function NewPage() {
-  return <div>New page content</div>;
-}
-```
-
-### To add components:
-
-Create `src/components/` directory and add components:
-```tsx
-// src/components/ui/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="px-4 py-2 bg-blue-600 text-white rounded">{children}</button>;
-}
-```
-
-### To add a database:
-
-Follow `.kilocode/recipes/add-database.md`
-
-### To add API routes:
-
-Create `src/app/api/[route]/route.ts`:
-```tsx
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ message: "Hello" });
-}
-```
-
-## Available Recipes
-
-| Recipe | File | Use Case |
-|--------|------|----------|
-| Add Database | `.kilocode/recipes/add-database.md` | Data persistence with Drizzle + SQLite |
-
-## Pending Improvements
-
-- [ ] Add more recipes (auth, email, etc.)
-- [ ] Add example components
-- [ ] Add testing setup recipe
+### Screen States
+1. `off` - Black screen with tiny power dot
+2. `static` - Canvas-based TV static noise
+3. `loading` - Static + loading overlay
+4. `playing` - YouTube iframe
+5. `dvd` - DVD bouncer fallback
+6. `guide` - Channel guide overlay
 
 ## Session History
 
 | Date | Changes |
 |------|---------|
-| Initial | Template created with base setup |
+| 2026-03-04 | Initial template created |
+| 2026-03-04 | Full Egyptian TV 90s experience built |
