@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>تلفزيون مصر 90s | Egyptian TV 90s</title>
+  <meta name="description" content="استمتع بأفضل أفلام ومسلسلات وموسيقى مصرية من التسعينات - Experience the best Egyptian movies, series, and music from the 90s" />
+  <meta name="keywords" content="Egyptian TV, تلفزيون مصري, أفلام مصرية, مسلسلات مصرية, تسعينات, 90s, retro TV" />
+  <meta property="og:title" content="تلفزيون مصر 90s | Egyptian TV 90s" />
+  <meta property="og:description" content="Retro Egyptian Television Experience" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       EGYPTIAN TV 90s - RETRO CRT TELEVISION STYLES
+       ============================================================ */
+
+    :root {
+      --tv-brown: #3D2B1F;
+      --tv-dark-brown: #2A1A10;
+      --tv-beige: #C8A882;
+      --tv-cream: #E8D5B7;
+      --tv-gold: #D4A017;
+      --tv-screen-bg: #0A0A0A;
+      --tv-green: #00FF41;
+      --tv-amber: #FFB000;
+      --tv-red: #FF3333;
+      --tv-blue: #0066FF;
+      --scanline-color: rgba(0, 0, 0, 0.15);
+      --crt-glow: rgba(0, 255, 65, 0.05);
+      --phosphor-green: #33FF33;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0D0D0D;
+      font-family: 'Cairo', 'VT323', monospace;
+    }
+
+    /* ============================================================
+       MAIN WRAPPER
+       ============================================================ */
+
+    .retro-tv-wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at center, #1a0a00 0%, #0D0D0D 70%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0,0,0,0.1) 2px,
+          rgba(0,0,0,0.1) 4px
+        );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .retro-tv-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 140, 0, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ============================================================
+       TV CABINET
+       ============================================================ */
+
+    .tv-cabinet {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(
+        135deg,
+        #5C3D2E 0%,
+        #3D2B1F 20%,
+        #2A1A10 40%,
+        #3D2B1F 60%,
+        #4A2E1A 80%,
+        #3D2B1F 100%
+      );
+      border-radius: 20px 20px 8px 8px;
+      padding: 24px 28px 20px;
+      box-shadow:
+        inset 0 2px 4px rgba(255, 200, 100, 0.1),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 0 3px #2A1A10,
+        0 0 0 5px #4A3020,
+        0 0 0 7px #2A1A10;
+      max-width: 900px;
+      width: 95vw;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 3px,
+          rgba(0,0,0,0.05) 3px,
+          rgba(0,0,0,0.05) 6px
+        ),
+        linear-gradient(
+          135deg,
+          #5C3D2E 0%,
+          #3D2B1F 20%,
+          #2A1A10 40%,
+          #3D2B1F 60%,
+          #4A2E1A 80%,
+          #3D2B1F 100%
+        );
+    }
+
+    /* ============================================================
+       TV SCREEN BEZEL
+       ============================================================ */
+
+    .tv-screen-bezel {
+      width: 100%;
+      background: linear-gradient(145deg, #1A1A1A, #0D0D0D, #1A1A1A);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.9),
+        inset 0 2px 4px rgba(255, 255, 255, 0.05),
+        0 4px 8px rgba(0, 0, 0, 0.5);
+      border: 3px solid #111;
+      position: relative;
+    }
+
+    .tv-screen-bezel::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      animation: ambient-glow 4s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .tv-screen {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: var(--tv-screen-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow:
+        inset 0 0 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 0, 0, 0.9);
+      border-radius: 12px / 8px;
+      animation: crt-flicker 8s infinite;
+    }
+
+    .tv-screen > * {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ============================================================
+       SCREEN STATES
+       ============================================================ */
+
+    .screen-off {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .power-dot {
+      width: 4px;
+      height: 4px;
+      background: #333;
+      border-radius: 50%;
+      box-shadow: 0 0 4px #333;
+    }
+
+    .screen-loading {
+      position: relative;
+    }
+
+    .loading-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+
+    .loading-text {
+      text-align: center;
+      color: var(--tv-amber);
+      font-family: 'VT323', monospace;
+      font-size: 28px;
+      text-shadow: 0 0 10px var(--tv-amber);
+    }
+
+    .arabic-text {
+      display: block;
+      font-family: 'Cairo', sans-serif;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .loading-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .loading-dots span {
+      animation: blink 1s infinite;
+      font-size: 20px;
+    }
+
+    .loading-dots span:nth-child(2) { animation-delay: 0.3s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    /* ============================================================
+       SCANLINES & CRT EFFECTS
+       ============================================================ */
+
+    .scanlines-overlay {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.12) 2px,
+        rgba(0, 0, 0, 0.12) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+      mix-blend-mode: multiply;
+    }
+
+    .crt-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+      pointer-events: none;
+      z-index: 101;
+    }
+
+    @keyframes crt-flicker {
+      0% { opacity: 1; }
+      92% { opacity: 1; }
+      93% { opacity: 0.95; }
+      94% { opacity: 1; }
+      96% { opacity: 0.97; }
+      100% { opacity: 1; }
+    }
+
+    /* ============================================================
+       STATIC NOISE
+       ============================================================ */
+
+    .static-noise-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .static-canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+    }
+
+    .static-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .static-flicker {
+      position: absolute;
+      inset: 0;
+      animation: static-flicker 0.1s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes static-flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.95; }
+      100% { opacity: 1; }
+    }
+
+    /* ============================================================
+       DVD BOUNCER
+       ============================================================ */
+
+    .dvd-bouncer-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .dvd-background {
+      position: absolute;
+      inset: 0;
+      background: #000;
+    }
+
+    .corner-flash {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.1);
+      animation: corner-flash 0.3s ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes corner-flash {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .dvd-logo {
+      position: absolute;
+      width: 120px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .dvd-logo-text {
+      font-family: 'Orbitron', monospace;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+
+    .dvd-logo-subtitle {
+      font-family: 'Cairo', sans-serif;
+      font-size: 10px;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    .dvd-logo-year {
+      font-family: 'VT323', monospace;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .dvd-loading-message {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+    }
+
+    .dvd-msg-arabic {
+      font-family: 'Cairo', sans-serif;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .dvd-msg-english {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .dvd-msg-dots {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .dvd-msg-dots span {
+      animation: blink 1.2s infinite;
+    }
+
+    .dvd-msg-dots .dot-2 { animation-delay: 0.4s; }
+    .dvd-msg-dots .dot-3 { animation-delay: 0.8s; }
+
+    .dvd-scanlines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.1) 6px
+      );
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       VIDEO PLAYER
+       ============================================================ */
+
+    .video-container {
+      position: absolute;
+      inset: 0;
+    }
+
+    .youtube-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ============================================================
+       CHANNEL BANNER
+       ============================================================ */
+
+    .channel-banner {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.85);
+      border: 2px solid var(--tv-amber);
+      border-radius: 6px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 200;
+      animation: banner-slide-in 0.3s ease-out;
+      backdrop-filter: blur(4px);
+    }
+
+    @keyframes banner-slide-in {
+      from { transform: translateX(-20px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .channel-number {
+      font-family: 'VT323', monospace;
+      font-size: 32px;
+      color: var(--tv-amber);
+      text-shadow: 0 0 10px var(--tv-amber);
+      min-width: 60px;
+    }
+
+    .channel-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .channel-icon {
+      font-size: 24px;
+    }
+
+    .channel-name-ar {
+      font-family: 'Cairo', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .channel-name-en {
+      font-family: 'VT323', monospace;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ============================================================
+       VOLUME BAR
+       ============================================================ */
+
+    .volume-bar-overlay {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid var(--tv-amber);
+      border-radius: 4px;
+      padding: 8px 16px;
+      min-width: 200px;
+      z-index: 200;
+      animation: fade-in 0.2s ease-out;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(5px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    .volume-label {
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      color: var(--tv-amber);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .volume-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .volume-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--tv-amber), #FFD700);
+      border-radius: 3px;
+      transition: width 0.1s ease;
+      box-shadow: 0 0 8px var(--tv-amber);
+    }
+
+    /* ============================================================
+       NOW PLAYING BAR
+       ============================================================ */
+
+    .now-playing-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 20px 16px 8px;
+      z-index: 150;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .tv-screen:hover .now-playing-bar {
+      opacity: 1;
+    }
+
+    .now-playing-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .now-playing-label {
+      color: var(--tv-amber);
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+    }
+
+    .now-playing-title {
+      font-weight: 600;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .now-playing-year {
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'VT323', monospace;
+      font-size: 16px;
+    }
+
+    /* ============================================================
+       TV CONTROLS PANEL
+       ============================================================ */
+
+    .tv-controls {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 8px 8px;
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       KNOBS
+       ============================================================ */
+
+    .controls-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 80px;
+    }
+
+    .knob-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .knob-label {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: var(--tv-cream);
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .knob {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #555, #222, #111);
+      border: 3px solid #444;
+      position: relative;
+      cursor: pointer;
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
+      transition: transform 0.1s ease;
+    }
+
+    .knob:hover { transform: scale(1.05); }
+    .knob:active { transform: scale(0.95); }
+
+    .knob-indicator {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 12px;
+      background: var(--tv-amber);
+      border-radius: 2px;
+      box-shadow: 0 0 4px var(--tv-amber);
+      transform-origin: bottom center;
+    }
+
+    .channel-knob .knob-indicator {
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    .knob-buttons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .knob-btn {
+      width: 24px;
+      height: 20px;
+      background: linear-gradient(145deg, #444, #222);
+      border: 1px solid #555;
+      border-radius: 3px;
+      color: var(--tv-cream);
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s ease;
+      font-family: 'VT323', monospace;
+    }
+
+    .knob-btn:hover {
+      background: linear-gradient(145deg, #555, #333);
+      color: var(--tv-amber);
+    }
+
+    .knob-btn:active {
+      transform: translateY(1px);
+      background: linear-gradient(145deg, #333, #111);
+    }
+
+    /* ============================================================
+       CHANNEL PRESET BUTTONS
+       ============================================================ */
+
+    .controls-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .channel-buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      width: 100%;
+    }
+
+    .channel-preset-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 6px 4px;
+      background: linear-gradient(145deg, #3A3A3A, #1A1A1A);
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 3px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .channel-preset-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--ch-color, #FFD700);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .channel-preset-btn:hover::before { opacity: 0.1; }
+
+    .channel-preset-btn.active {
+      background: linear-gradient(145deg, #2A2A2A, #111);
+      box-shadow:
+        0 0 12px var(--ch-color, #FFD700),
+        0 3px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .channel-preset-btn.active::before { opacity: 0.15; }
+    .channel-preset-btn:hover { transform: translateY(-1px); }
+    .channel-preset-btn:active { transform: translateY(1px); }
+
+    .ch-btn-icon { font-size: 18px; line-height: 1; }
+
+    .ch-btn-num {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1;
+    }
+
+    .ch-btn-name {
+      font-family: 'Cairo', sans-serif;
+      font-size: 9px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .channel-preset-btn.active .ch-btn-name { color: #fff; }
+
+    /* ============================================================
+       RIGHT CONTROLS
+       ============================================================ */
+
+    .controls-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-width: 90px;
+    }
+
+    .power-button {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 3px solid #444;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .power-button.off {
+      background: radial-gradient(circle at 35% 35%, #444, #222, #111);
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05);
+    }
+
+    .power-button.on {
+      background: radial-gradient(circle at 35% 35%, #553300, #331100, #220000);
+      border-color: #FF4400;
+      box-shadow:
+        0 0 20px rgba(255, 68, 0, 0.6),
+        0 0 40px rgba(255, 68, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 100, 0, 0.2);
+      animation: power-pulse 2s infinite;
+    }
+
+    @keyframes power-pulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 68, 0, 0.6), 0 0 40px rgba(255, 68, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.5); }
+      50% { box-shadow: 0 0 30px rgba(255, 68, 0, 0.8), 0 0 60px rgba(255, 68, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.5); }
+    }
+
+    .power-button:hover { transform: scale(1.05); }
+    .power-button:active { transform: scale(0.95); }
+
+    .power-icon {
+      font-size: 24px;
+      color: var(--tv-cream);
+      line-height: 1;
+    }
+
+    .power-button.on .power-icon {
+      color: #FF6633;
+      text-shadow: 0 0 10px #FF4400;
+    }
+
+    .power-label {
+      font-family: 'VT323', monospace;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px 8px;
+      background: linear-gradient(145deg, #3A3A3A, #1A1A1A);
+      border: 1px solid #444;
+      border-radius: 4px;
+      color: var(--tv-cream);
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .action-btn span:first-child { font-size: 14px; }
+
+    .action-btn:hover:not(:disabled) {
+      background: linear-gradient(145deg, #4A4A4A, #2A2A2A);
+      color: var(--tv-amber);
+      border-color: var(--tv-amber);
+    }
+
+    .action-btn:active:not(:disabled) { transform: translateY(1px); }
+
+    .action-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .brightness-control { width: 100%; }
+
+    .brightness-label {
+      font-family: 'VT323', monospace;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+
+    .brightness-slider {
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: linear-gradient(90deg, #222, var(--tv-amber));
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .brightness-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--tv-amber);
+      cursor: pointer;
+      box-shadow: 0 0 4px var(--tv-amber);
+    }
+
+    /* ============================================================
+       TV BRAND LABEL
+       ============================================================ */
+
+    .tv-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 8px 0 4px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .brand-arabic {
+      font-family: 'Cairo', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--tv-gold);
+      text-shadow: 0 0 8px rgba(212, 160, 23, 0.5);
+      letter-spacing: 2px;
+    }
+
+    .brand-english {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--tv-cream);
+      letter-spacing: 3px;
+      opacity: 0.8;
+    }
+
+    .brand-model {
+      font-family: 'VT323', monospace;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 2px;
+    }
+
+    /* ============================================================
+       TV LEGS
+       ============================================================ */
+
+    .tv-legs {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      margin-top: -4px;
+    }
+
+    .tv-leg {
+      width: 20px;
+      height: 24px;
+      background: linear-gradient(180deg, #3D2B1F, #2A1A10);
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ============================================================
+       KEYBOARD SHORTCUTS HELP
+       ============================================================ */
+
+    .keyboard-help {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 16px;
+      font-family: 'VT323', monospace;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.3);
+      letter-spacing: 1px;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    /* ============================================================
+       CHANNEL GUIDE OVERLAY
+       ============================================================ */
+
+    .channel-guide-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 500;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      backdrop-filter: blur(4px);
+    }
+
+    .channel-guide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Cairo', sans-serif;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .guide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: linear-gradient(90deg, #1A0A00, #2A1500, #1A0A00);
+      border-bottom: 2px solid var(--tv-amber);
+      flex-shrink: 0;
+    }
+
+    .guide-title {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .guide-title-ar {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--tv-amber);
+    }
+
+    .guide-title-en {
+      font-family: 'VT323', monospace;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 2px;
+    }
+
+    .guide-time {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      color: var(--tv-amber);
+      text-shadow: 0 0 8px var(--tv-amber);
+    }
+
+    .guide-close-btn {
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .guide-close-btn:hover {
+      background: rgba(255, 68, 0, 0.3);
+      border-color: #FF4400;
+    }
+
+    .guide-search {
+      padding: 8px 16px;
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .guide-search-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 6px 12px;
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .guide-search-input:focus {
+      border-color: var(--tv-amber);
+      box-shadow: 0 0 8px rgba(255, 176, 0, 0.2);
+    }
+
+    .guide-search-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+    .search-spinner {
+      color: var(--tv-amber);
+      font-size: 18px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .guide-body {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .guide-channels-list {
+      width: 140px;
+      flex-shrink: 0;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.4);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .guide-channels-list::-webkit-scrollbar { width: 4px; }
+    .guide-channels-list::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); }
+    .guide-channels-list::-webkit-scrollbar-thumb { background: var(--tv-amber); border-radius: 2px; }
+
+    .guide-channel-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      position: relative;
+      text-align: center;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      color: #fff;
+    }
+
+    .guide-channel-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--ch-color, #FFD700);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .guide-channel-item:hover { background: rgba(255, 255, 255, 0.05); }
+    .guide-channel-item.active { background: rgba(255, 176, 0, 0.1); }
+    .guide-channel-item.active::before { opacity: 1; }
+
+    .guide-ch-num {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+    }
+
+    .guide-ch-icon { font-size: 20px; margin: 2px 0; }
+
+    .guide-ch-names {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .guide-ch-ar { font-size: 11px; font-weight: 600; color: #fff; }
+
+    .guide-ch-en {
+      font-family: 'VT323', monospace;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+    }
+
+    .guide-ch-count {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: var(--tv-amber);
+      margin-top: 2px;
+    }
+
+    .guide-content-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+      min-width: 0;
+    }
+
+    .guide-content-area::-webkit-scrollbar { width: 4px; }
+    .guide-content-area::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); }
+    .guide-content-area::-webkit-scrollbar-thumb { background: var(--tv-amber); border-radius: 2px; }
+
+    .guide-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .guide-loading-spinner {
+      font-size: 32px;
+      color: var(--tv-amber);
+      animation: spin 1s linear infinite;
+    }
+
+    .guide-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .guide-empty-icon { font-size: 40px; opacity: 0.5; }
+    .guide-empty-text { font-size: 16px; font-weight: 600; }
+
+    .guide-empty-subtext {
+      font-family: 'VT323', monospace;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .guide-video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 8px;
+    }
+
+    .guide-video-card {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+      color: #fff;
+    }
+
+    .guide-video-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 176, 0, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .guide-video-card.selected {
+      border-color: var(--tv-amber);
+      background: rgba(255, 176, 0, 0.1);
+      box-shadow: 0 0 12px rgba(255, 176, 0, 0.2);
+    }
+
+    .guide-video-thumb {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .guide-thumb-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .guide-thumb-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      background: linear-gradient(135deg, #1A1A1A, #0D0D0D);
+    }
+
+    .guide-video-year {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--tv-amber);
+      font-family: 'VT323', monospace;
+      font-size: 12px;
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    .guide-video-info {
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .guide-video-title-ar {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .guide-video-stars {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .guide-video-duration {
+      font-family: 'VT323', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .guide-preview {
+      width: 180px;
+      flex-shrink: 0;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+    }
+
+    .guide-preview-title { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.3; }
+
+    .guide-preview-year {
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      color: var(--tv-amber);
+    }
+
+    .guide-preview-desc { font-size: 11px; color: rgba(255, 255, 255, 0.6); line-height: 1.5; }
+
+    .guide-preview-stars,
+    .guide-preview-director { font-size: 11px; color: rgba(255, 255, 255, 0.5); }
+
+    .guide-watch-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 10px;
+      background: linear-gradient(135deg, #FF6600, #CC4400);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.15s ease;
+      margin-top: auto;
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.4);
+    }
+
+    .guide-watch-btn span:last-child {
+      font-family: 'VT323', monospace;
+      font-size: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+    }
+
+    .guide-watch-btn:hover {
+      background: linear-gradient(135deg, #FF7700, #DD5500);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 102, 0, 0.5);
+    }
+
+    .guide-footer {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 16px;
+      background: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'VT323', monospace;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    .guide-footer-brand {
+      margin-left: auto;
+      color: var(--tv-amber);
+      font-size: 14px;
+    }
+
+    /* ============================================================
+       RESPONSIVE ADJUSTMENTS
+       ============================================================ */
+
+    @media (max-width: 768px) {
+      .tv-cabinet { padding: 12px 12px 10px; border-radius: 12px 12px 4px 4px; }
+      .tv-controls { flex-direction: column; gap: 8px; }
+      .controls-left { flex-direction: row; min-width: unset; width: 100%; justify-content: space-around; }
+      .controls-center { width: 100%; }
+      .channel-buttons-grid { grid-template-columns: repeat(4, 1fr); }
+      .controls-right { flex-direction: row; min-width: unset; width: 100%; justify-content: space-around; align-items: center; }
+      .action-buttons { flex-direction: row; }
+      .brightness-control { display: none; }
+      .guide-preview { display: none; }
+      .guide-channels-list { width: 100px; }
+      .keyboard-help { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .channel-buttons-grid { grid-template-columns: repeat(4, 1fr); }
+      .ch-btn-name { display: none; }
+      .guide-video-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+    }
+
+    /* ============================================================
+       SCROLLBAR STYLES
+       ============================================================ */
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.3); }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 176, 0, 0.5); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--tv-amber); }
+
+    ::selection { background: rgba(255, 176, 0, 0.3); color: #fff; }
+
+    @keyframes ambient-glow {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Hidden utility */
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<div class="retro-tv-wrapper">
+  <!-- TV Cabinet -->
+  <div class="tv-cabinet">
+
+    <!-- TV Screen Area -->
+    <div class="tv-screen-bezel">
+      <div class="tv-screen" id="tvScreen" style="filter: brightness(0.8)">
+
+        <!-- CRT Scanlines Overlay (shown when powered) -->
+        <div class="scanlines-overlay hidden" id="scanlinesOverlay"></div>
+
+        <!-- CRT Curvature Effect -->
+        <div class="crt-overlay"></div>
+
+        <!-- Screen: OFF -->
+        <div class="screen-off" id="screenOff">
+          <div class="power-dot"></div>
+        </div>
+
+        <!-- Screen: STATIC -->
+        <div class="static-noise-container hidden" id="screenStatic">
+          <canvas id="staticCanvas" width="640" height="480" class="static-canvas"></canvas>
+          <div class="static-vignette"></div>
+          <div class="static-flicker"></div>
+        </div>
+
+        <!-- Screen: LOADING -->
+        <div class="screen-loading hidden" id="screenLoading">
+          <div class="static-noise-container" id="loadingStaticContainer">
+            <canvas id="loadingStaticCanvas" width="320" height="240" class="static-canvas"></canvas>
+            <div class="static-vignette"></div>
+          </div>
+          <div class="loading-overlay">
+            <div class="loading-text">
+              <span class="arabic-text">جاري التحميل...</span>
+              <div class="loading-dots">
+                <span>●</span><span>●</span><span>●</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen: DVD BOUNCER -->
+        <div class="dvd-bouncer-container hidden" id="screenDVD">
+          <div class="dvd-background"></div>
+          <div class="corner-flash hidden" id="cornerFlash"></div>
+          <div class="dvd-logo" id="dvdLogo" style="left:100px;top:100px;color:#FF6B6B;text-shadow:0 0 20px #FF6B6B,0 0 40px #FF6B6B">
+            <div class="dvd-logo-text">DVD</div>
+            <div class="dvd-logo-subtitle">تلفزيون مصر</div>
+            <div class="dvd-logo-year">90s</div>
+          </div>
+          <div class="dvd-loading-message">
+            <div class="dvd-msg-arabic">جاري تحميل المحتوى...</div>
+            <div class="dvd-msg-english">Loading Egyptian 90s content...</div>
+            <div class="dvd-msg-dots">
+              <span class="dot-1">●</span>
+              <span class="dot-2">●</span>
+              <span class="dot-3">●</span>
+            </div>
+          </div>
+          <div class="dvd-scanlines"></div>
+        </div>
+
+        <!-- Screen: PLAYING -->
+        <div class="video-container hidden" id="screenPlaying">
+          <iframe
+            id="youtubeIframe"
+            src=""
+            title="Egyptian TV"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="youtube-iframe"
+          ></iframe>
+        </div>
+
+        <!-- Channel Banner -->
+        <div class="channel-banner hidden" id="channelBanner">
+          <div class="channel-number" id="bannerChNum">CH 1</div>
+          <div class="channel-info">
+            <span class="channel-icon" id="bannerChIcon">🎬</span>
+            <div>
+              <div class="channel-name-ar" id="bannerChNameAr">أفلام</div>
+              <div class="channel-name-en" id="bannerChNameEn">Movies</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volume Bar -->
+        <div class="volume-bar-overlay hidden" id="volumeBar">
+          <div class="volume-label" id="volumeLabel">🔊 VOL 70</div>
+          <div class="volume-track">
+            <div class="volume-fill" id="volumeFill" style="width:70%"></div>
+          </div>
+        </div>
+
+        <!-- Now Playing Bar -->
+        <div class="now-playing-bar hidden" id="nowPlayingBar">
+          <div class="now-playing-content">
+            <span class="now-playing-label">▶ الآن يُعرض</span>
+            <span class="now-playing-title" id="nowPlayingTitle">—</span>
+            <span class="now-playing-year" id="nowPlayingYear">—</span>
+          </div>
+        </div>
+
+        <!-- Channel Guide Overlay -->
+        <div class="channel-guide-overlay hidden" id="channelGuide">
+          <div class="channel-guide">
+            <div class="guide-header">
+              <div class="guide-title">
+                <span class="guide-title-ar">دليل القنوات</span>
+                <span class="guide-title-en">CHANNEL GUIDE</span>
+              </div>
+              <div class="guide-time" id="guideTime">00:00</div>
+              <button class="guide-close-btn" id="guideCloseBtn">✕</button>
+            </div>
+            <div class="guide-search">
+              <input
+                type="text"
+                id="guideSearchInput"
+                placeholder="ابحث عن فيلم أو مسلسل... / Search..."
+                class="guide-search-input"
+                dir="auto"
+              />
+              <span class="search-spinner hidden" id="searchSpinner">⟳</span>
+            </div>
+            <div class="guide-body">
+              <div class="guide-channels-list" id="guideChannelsList"></div>
+              <div class="guide-content-area" id="guideContentArea">
+                <div class="guide-empty">
+                  <div class="guide-empty-icon">📺</div>
+                  <div class="guide-empty-text">لا يوجد محتوى متاح</div>
+                  <div class="guide-empty-subtext">No content available</div>
+                </div>
+              </div>
+              <div class="guide-preview hidden" id="guidePreview">
+                <div class="guide-preview-title" id="previewTitle">—</div>
+                <div class="guide-preview-year" id="previewYear">—</div>
+                <div class="guide-preview-desc hidden" id="previewDesc"></div>
+                <div class="guide-preview-stars hidden" id="previewStars"></div>
+                <div class="guide-preview-director hidden" id="previewDirector"></div>
+                <button class="guide-watch-btn" id="guideWatchBtn">
+                  <span>▶ شاهد الآن</span>
+                  <span>Watch Now</span>
+                </button>
+              </div>
+            </div>
+            <div class="guide-footer">
+              <span>↑↓ تصفح</span>
+              <span>ENTER مشاهدة</span>
+              <span>ESC إغلاق</span>
+              <span class="guide-footer-brand">تلفزيون مصر 90s</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /tv-screen -->
+    </div><!-- /tv-screen-bezel -->
+
+    <!-- TV Controls Panel -->
+    <div class="tv-controls">
+
+      <!-- Left Controls -->
+      <div class="controls-left">
+        <div class="knob-group">
+          <div class="knob-label">CHANNEL</div>
+          <div class="knob channel-knob" id="channelKnob" title="Channel Up">
+            <div class="knob-indicator"></div>
+          </div>
+          <div class="knob-buttons">
+            <button class="knob-btn" id="chUpBtn" title="CH+">▲</button>
+            <button class="knob-btn" id="chDownBtn" title="CH-">▼</button>
+          </div>
+        </div>
+        <div class="knob-group">
+          <div class="knob-label">VOLUME</div>
+          <div class="knob volume-knob" title="Volume">
+            <div class="knob-indicator" id="volumeKnobIndicator" style="transform: translateX(-50%) rotate(-135deg)"></div>
+          </div>
+          <div class="knob-buttons">
+            <button class="knob-btn" id="volUpBtn" title="VOL+">+</button>
+            <button class="knob-btn" id="volDownBtn" title="VOL-">-</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center - Channel Buttons -->
+      <div class="controls-center">
+        <div class="channel-buttons-grid" id="channelButtonsGrid"></div>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="controls-right">
+        <button class="power-button off" id="powerBtn" title="Power">
+          <span class="power-icon">⏻</span>
+          <span class="power-label">POWER</span>
+        </button>
+        <div class="action-buttons">
+          <button class="action-btn mute-btn" id="muteBtn" title="Mute" disabled>
+            <span>🔊</span><span>MUTE</span>
+          </button>
+          <button class="action-btn next-btn" id="nextBtn" title="Next Video" disabled>
+            <span>⏭</span><span>NEXT</span>
+          </button>
+          <button class="action-btn guide-btn" id="guideBtn" title="Channel Guide" disabled>
+            <span>📋</span><span>GUIDE</span>
+          </button>
+        </div>
+        <div class="brightness-control">
+          <div class="brightness-label">☀ BRIGHT</div>
+          <input
+            type="range"
+            min="30"
+            max="120"
+            value="80"
+            class="brightness-slider"
+            id="brightnessSlider"
+            title="Brightness"
+          />
+        </div>
+      </div>
+
+    </div><!-- /tv-controls -->
+
+    <!-- TV Brand Label -->
+    <div class="tv-brand">
+      <span class="brand-arabic">تلفزيون مصر</span>
+      <span class="brand-english">EGYPTIAN TV 90s</span>
+      <span class="brand-model">MODEL: EGY-1990</span>
+    </div>
+
+    <!-- TV Legs -->
+    <div class="tv-legs">
+      <div class="tv-leg left"></div>
+      <div class="tv-leg right"></div>
+    </div>
+
+  </div><!-- /tv-cabinet -->
+
+  <!-- Keyboard Shortcuts Help -->
+  <div class="keyboard-help">
+    <span>SPACE: Power</span>
+    <span>↑↓: Channel</span>
+    <span>→: Next</span>
+    <span>+/-: Volume</span>
+    <span>M: Mute</span>
+    <span>G: Guide</span>
+  </div>
+
+</div><!-- /retro-tv-wrapper -->
+
+<script>
+// ============================================================
+// CHANNEL TYPES
+// ============================================================
+const CHANNEL_TYPES = [
+  { id: 'movie',   name: 'أفلام',    nameEn: 'Movies',   icon: '🎬', color: '#FFD700', ch: 1 },
+  { id: 'series',  name: 'مسلسلات', nameEn: 'Series',   icon: '📺', color: '#FF6B35', ch: 2 },
+  { id: 'music',   name: 'موسيقى',  nameEn: 'Music',    icon: '🎵', color: '#9B59B6', ch: 3 },
+  { id: 'comedy',  name: 'كوميديا', nameEn: 'Comedy',   icon: '😂', color: '#2ECC71', ch: 4 },
+  { id: 'sports',  name: 'رياضة',   nameEn: 'Sports',   icon: '⚽', color: '#3498DB', ch: 5 },
+  { id: 'cartoon', name: 'كرتون',   nameEn: 'Cartoons', icon: '🎨', color: '#E74C3C', ch: 6 },
+  { id: 'variety', name: 'برامج',   nameEn: 'Variety',  icon: '🌟', color: '#1ABC9C', ch: 7 },
+  { id: 'drama',   name: 'دراما',   nameEn: 'Drama',    icon: '🎭', color: '#E67E22', ch: 8 },
+];
+
+const DVD_COLORS = [
+  '#FF6B6B','#4ECDC4','#45B7D1','#96CEB4',
+  '#FFEAA7','#DDA0DD','#98D8C8','#F7DC6F',
+  '#FF9FF3','#54A0FF','#5F27CD','#00D2D3',
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let isPowered = false;
+let screenState = 'off'; // off | static | loading | playing | dvd | guide
+let currentChannel = 0;
+let currentVideo = null;
+let contentList = [];
+let contentIndex = 0;
+let volume = 70;
+let isMuted = false;
+let brightness = 80;
+let showChannelBanner = false;
+let showGuide = false;
+let showVolumeBar = false;
+let allContent = {}; // { type: [VideoItem] }
+let channelPage = 0;
+
+// Guide state
+let guideSelectedChannel = 0;
+let guideSelectedVideo = null;
+let guideSearchQuery = '';
+
+// Timers
+let channelBannerTimer = null;
+let volumeBarTimer = null;
+let staticTimer = null;
+
+// DVD bouncer state
+let dvdPos = { x: 100, y: 100 };
+let dvdVel = { x: 2.5, y: 2 };
+let dvdColorIndex = 0;
+let dvdAnimFrame = null;
+const LOGO_W = 120, LOGO_H = 60;
+
+// Static canvas animation
+let staticAnimFrame = null;
+let staticFrame = 0;
+let loadingStaticAnimFrame = null;
+
+// ============================================================
+// DOM REFS
+// ============================================================
+const tvScreen = document.getElementById('tvScreen');
+const screenOff = document.getElementById('screenOff');
+const screenStatic = document.getElementById('screenStatic');
+const screenLoading = document.getElementById('screenLoading');
+const screenDVD = document.getElementById('screenDVD');
+const screenPlaying = document.getElementById('screenPlaying');
+const scanlinesOverlay = document.getElementById('scanlinesOverlay');
+const channelBannerEl = document.getElementById('channelBanner');
+const volumeBarEl = document.getElementById('volumeBar');
+const volumeLabelEl = document.getElementById('volumeLabel');
+const volumeFillEl = document.getElementById('volumeFill');
+const nowPlayingBar = document.getElementById('nowPlayingBar');
+const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+const nowPlayingYear = document.getElementById('nowPlayingYear');
+const channelGuideEl = document.getElementById('channelGuide');
+const youtubeIframe = document.getElementById('youtubeIframe');
+const powerBtn = document.getElementById('powerBtn');
+const muteBtn = document.getElementById('muteBtn');
+const nextBtn = document.getElementById('nextBtn');
+const guideBtn = document.getElementById('guideBtn');
+const brightnessSlider = document.getElementById('brightnessSlider');
+const volumeKnobIndicator = document.getElementById('volumeKnobIndicator');
+const channelButtonsGrid = document.getElementById('channelButtonsGrid');
+const dvdLogo = document.getElementById('dvdLogo');
+const cornerFlash = document.getElementById('cornerFlash');
+const staticCanvas = document.getElementById('staticCanvas');
+const loadingStaticCanvas = document.getElementById('loadingStaticCanvas');
+const guideChannelsList = document.getElementById('guideChannelsList');
+const guideContentArea = document.getElementById('guideContentArea');
+const guidePreview = document.getElementById('guidePreview');
+const guideSearchInput = document.getElementById('guideSearchInput');
+const searchSpinner = document.getElementById('searchSpinner');
+const guideTime = document.getElementById('guideTime');
+const guideWatchBtn = document.getElementById('guideWatchBtn');
+const bannerChNum = document.getElementById('bannerChNum');
+const bannerChIcon = document.getElementById('bannerChIcon');
+const bannerChNameAr = document.getElementById('bannerChNameAr');
+const bannerChNameEn = document.getElementById('bannerChNameEn');
+
+// ============================================================
+// HELPERS
+// ============================================================
+function show(el) { el.classList.remove('hidden'); }
+function hide(el) { el.classList.add('hidden'); }
+function isHidden(el) { return el.classList.contains('hidden'); }
+
+function setScreenState(state) {
+  screenState = state;
+  hide(screenOff);
+  hide(screenStatic);
+  hide(screenLoading);
+  hide(screenDVD);
+  hide(screenPlaying);
+  hide(nowPlayingBar);
+
+  stopStaticAnimation();
+  stopLoadingStaticAnimation();
+  stopDVDAnimation();
+
+  if (state === 'off') {
+    show(screenOff);
+    hide(scanlinesOverlay);
+  } else if (state === 'static') {
+    show(screenStatic);
+    startStaticAnimation(staticCanvas, 1);
+    if (isPowered) show(scanlinesOverlay);
+  } else if (state === 'loading') {
+    show(screenLoading);
+    startLoadingStaticAnimation();
+    if (isPowered) show(scanlinesOverlay);
+  } else if (state === 'dvd') {
+    show(screenDVD);
+    startDVDAnimation();
+    if (isPowered) show(scanlinesOverlay);
+  } else if (state === 'playing') {
+    show(screenPlaying);
+    show(nowPlayingBar);
+    if (isPowered) show(scanlinesOverlay);
+  } else if (state === 'guide') {
+    // guide is an overlay, keep current screen
+  }
+}
+
+// ============================================================
+// STATIC NOISE ANIMATION
+// ============================================================
+function drawStaticFrame(canvas, intensity, frame) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  const imageData = ctx.createImageData(w, h);
+  const data = imageData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const noise = Math.random() * 255 * intensity;
+    data[i]     = noise * 0.9;
+    data[i + 1] = noise * 0.85;
+    data[i + 2] = noise * 0.7;
+    data[i + 3] = 255;
+  }
+  if (frame % 3 === 0) {
+    const lineY = Math.floor(Math.random() * h);
+    for (let x = 0; x < w; x++) {
+      const idx = (lineY * w + x) * 4;
+      data[idx] = 255; data[idx+1] = 255; data[idx+2] = 200; data[idx+3] = 180;
+    }
+  }
+  if (frame % 7 === 0) {
+    const lineX = Math.floor(Math.random() * w);
+    for (let y = 0; y < h; y++) {
+      const idx = (y * w + lineX) * 4;
+      data[idx] = 200; data[idx+1] = 200; data[idx+2] = 150; data[idx+3] = 150;
+    }
+  }
+  ctx.putImageData(imageData, 0, 0);
+  if (frame % 30 < 5) {
+    ctx.fillStyle = `rgba(255,255,200,${0.3 * intensity})`;
+    ctx.font = 'bold 24px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('NO SIGNAL', w / 2, h / 2);
+    ctx.font = '14px monospace';
+    ctx.fillText('لا يوجد إشارة', w / 2, h / 2 + 30);
+  }
+}
+
+function startStaticAnimation(canvas, intensity) {
+  let frame = 0;
+  function loop() {
+    drawStaticFrame(canvas, intensity, frame++);
+    staticAnimFrame = requestAnimationFrame(loop);
+  }
+  loop();
+}
+
+function stopStaticAnimation() {
+  if (staticAnimFrame) { cancelAnimationFrame(staticAnimFrame); staticAnimFrame = null; }
+}
+
+function startLoadingStaticAnimation() {
+  let frame = 0;
+  function loop() {
+    drawStaticFrame(loadingStaticCanvas, 0.3, frame++);
+    loadingStaticAnimFrame = requestAnimationFrame(loop);
+  }
+  loop();
+}
+
+function stopLoadingStaticAnimation() {
+  if (loadingStaticAnimFrame) { cancelAnimationFrame(loadingStaticAnimFrame); loadingStaticAnimFrame = null; }
+}
+
+// ============================================================
+// DVD BOUNCER ANIMATION
+// ============================================================
+function startDVDAnimation() {
+  const container = screenDVD;
+  function animate() {
+    const cw = container.clientWidth;
+    const ch = container.clientHeight;
+    let { x, y } = dvdPos;
+    let { x: vx, y: vy } = dvdVel;
+    x += vx; y += vy;
+    let bounced = false, cornerHit = false;
+    if (x <= 0) { x = 0; vx = Math.abs(vx); bounced = true; }
+    else if (x + LOGO_W >= cw) { x = cw - LOGO_W; vx = -Math.abs(vx); bounced = true; }
+    if (y <= 0) { y = 0; vy = Math.abs(vy); bounced = true; }
+    else if (y + LOGO_H >= ch) { y = ch - LOGO_H; vy = -Math.abs(vy); bounced = true; }
+    if ((x <= 2 || x + LOGO_W >= cw - 2) && (y <= 2 || y + LOGO_H >= ch - 2)) cornerHit = true;
+    dvdPos = { x, y };
+    dvdVel = { x: vx, y: vy };
+    if (bounced) {
+      dvdColorIndex = (dvdColorIndex + 1) % DVD_COLORS.length;
+      const c = DVD_COLORS[dvdColorIndex];
+      dvdLogo.style.color = c;
+      dvdLogo.style.textShadow = `0 0 20px ${c}, 0 0 40px ${c}`;
+    }
+    if (cornerHit) {
+      show(cornerFlash);
+      setTimeout(() => hide(cornerFlash), 500);
+    }
+    dvdLogo.style.left = x + 'px';
+    dvdLogo.style.top = y + 'px';
+    dvdAnimFrame = requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+function stopDVDAnimation() {
+  if (dvdAnimFrame) { cancelAnimationFrame(dvdAnimFrame); dvdAnimFrame = null; }
+}
+
+// ============================================================
+// CHANNEL BUTTONS
+// ============================================================
+function buildChannelButtons() {
+  channelButtonsGrid.innerHTML = '';
+  CHANNEL_TYPES.forEach((ch, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'channel-preset-btn' + (currentChannel === index && isPowered ? ' active' : '');
+    btn.style.setProperty('--ch-color', ch.color);
+    if (currentChannel === index && isPowered) {
+      btn.style.borderColor = ch.color;
+    } else {
+      btn.style.borderColor = 'transparent';
+    }
+    btn.title = `${ch.nameEn} - ${ch.name}`;
+    btn.innerHTML = `
+      <span class="ch-btn-icon">${ch.icon}</span>
+      <span class="ch-btn-num">${ch.ch}</span>
+      <span class="ch-btn-name">${ch.name}</span>
+    `;
+    btn.addEventListener('click', () => {
+      if (!isPowered) return;
+      switchToChannel(index);
+    });
+    channelButtonsGrid.appendChild(btn);
+  });
+}
+
+function updateChannelButtons() {
+  const btns = channelButtonsGrid.querySelectorAll('.channel-preset-btn');
+  btns.forEach((btn, index) => {
+    const ch = CHANNEL_TYPES[index];
+    if (currentChannel === index && isPowered) {
+      btn.classList.add('active');
+      btn.style.borderColor = ch.color;
+    } else {
+      btn.classList.remove('active');
+      btn.style.borderColor = 'transparent';
+    }
+  });
+}
+
+// ============================================================
+// CONTENT FETCHING (via Invidious API)
+// ============================================================
+const INVIDIOUS_INSTANCES = [
+  'https://invidious.snopyta.org',
+  'https://vid.puffyan.us',
+  'https://invidious.kavin.rocks',
+  'https://yt.artemislena.eu',
+  'https://invidious.flokinet.to',
+  'https://invidious.projectsegfau.lt',
+  'https://inv.riverside.rocks',
+];
+
+const SEARCH_TERMS = {
+  movie:   ['فيلم مصري تسعينات','أفلام عادل إمام','أفلام نادية الجندي 90','فيلم مصري كوميدي قديم','أفلام أحمد زكي','فيلم مصري رومانسي'],
+  series:  ['مسلسل مصري تسعينات','مسلسل رأفت الهجان','مسلسل ليالي الحلمية','مسلسل مصري قديم','مسلسل يحيى الفخراني'],
+  music:   ['موسيقى مصرية تسعينات','أغاني عمرو دياب 90','أغاني عبد الحليم حافظ','أم كلثوم كلاسيك','موسيقى شرقية مصرية'],
+  comedy:  ['كوميديا مصرية تسعينات','عادل إمام كوميدي','سعيد صالح كوميديا','محمد هنيدي قديم','كوميديا مصرية قديمة'],
+  sports:  ['كرة قدم مصرية تسعينات','الأهلي المصري قديم','الزمالك تسعينات','منتخب مصر 90','كرة قدم عربية قديمة'],
+  cartoon: ['كرتون عربي قديم','كرتون مصري تسعينات','أنمي عربي مدبلج','كرتون سمير','كرتون عربي كلاسيك'],
+  variety: ['برامج مصرية تسعينات','برنامج مصري قديم','تلفزيون مصري قديم','برامج ترفيهية مصرية','فوازير رمضان مصرية'],
+  drama:   ['دراما مصرية تسعينات','مسلسل دراما مصري','دراما عربية كلاسيك','مسلسل مصري حزين','دراما مصرية قديمة'],
+};
+
+let instanceIndex = 0;
+
+async function fetchContent(type, page = 0) {
+  const terms = SEARCH_TERMS[type] || SEARCH_TERMS.movie;
+  const termIndex = page % terms.length;
+  const query = terms[termIndex];
+  const instance = INVIDIOUS_INSTANCES[instanceIndex % INVIDIOUS_INSTANCES.length];
+  instanceIndex++;
+
+  try {
+    const url = `${instance}/api/v1/search?q=${encodeURIComponent(query)}&type=video&page=${Math.floor(page / terms.length) + 1}&fields=videoId,title,author,lengthSeconds,videoThumbnails`;
+    const resp = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (!resp.ok) throw new Error('API error');
+    const data = await resp.json();
+    if (!Array.isArray(data)) throw new Error('Bad response');
+
+    return data.slice(0, 10).map((item, i) => ({
+      id: item.videoId + '_' + i,
+      youtubeId: item.videoId,
+      title: item.title,
+      titleAr: item.title,
+      year: 1990 + Math.floor(Math.random() * 10),
+      type: type,
+      thumbnail: item.videoThumbnails?.[0]?.url || '',
+      description: '',
+      stars: item.author || '',
+      director: '',
+      duration: item.lengthSeconds ? formatDuration(item.lengthSeconds) : '',
+    }));
+  } catch (e) {
+    console.warn('Invidious fetch failed:', e.message);
+    // Return fallback placeholder content
+    return generateFallbackContent(type, page);
+  }
+}
+
+function formatDuration(secs) {
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+function generateFallbackContent(type, page) {
+  const ch = CHANNEL_TYPES.find(c => c.id === type) || CHANNEL_TYPES[0];
+  const items = [];
+  const titles = {
+    movie:   ['الإرهاب والكباب','المنسي','اللعب مع الكبار','سمير وشهير وبهير','الواد محروس بتاع الوزير'],
+    series:  ['رأفت الهجان','ليالي الحلمية','الشهد والدموع','أرابيسك','زيزينيا'],
+    music:   ['نور العين - عمرو دياب','حبيبي يا نور العين','أنا مش عارف','وهران وهران','أغنية مصرية كلاسيك'],
+    comedy:  ['مدرسة المشاغبين','العيال كبرت','الواد سيد الشغال','خللي بالك من زوزو','الزوجة الثانية'],
+    sports:  ['نهائي كأس مصر 1993','الأهلي والزمالك الكلاسيكو','منتخب مصر أمم أفريقيا','كرة قدم مصرية','دوري الكرة المصرية'],
+    cartoon: ['سمير','بكار','مغامرات سندباد','علاء الدين عربي','كرتون عربي كلاسيك'],
+    variety: ['فوازير نيللي','برنامج صباح الخير يا مصر','مع الناس','برنامج مصري قديم','فوازير رمضان'],
+    drama:   ['الدالي','أم كلثوم','ناصر 56','أيام السادات','دراما مصرية كلاسيك'],
+  };
+  const arr = titles[type] || titles.movie;
+  for (let i = 0; i < 5; i++) {
+    items.push({
+      id: `fallback_${type}_${page}_${i}`,
+      youtubeId: '',
+      title: arr[i % arr.length],
+      titleAr: arr[i % arr.length],
+      year: 1990 + i,
+      type,
+      thumbnail: '',
+      description: 'محتوى مصري كلاسيك من التسعينات',
+      stars: '',
+      director: '',
+      duration: '',
+    });
+  }
+  return items;
+}
+
+// ============================================================
+// POWER
+// ============================================================
+async function handlePower() {
+  if (isPowered) {
+    // Power off
+    setScreenState('static');
+    setTimeout(() => {
+      setScreenState('off');
+      isPowered = false;
+      currentVideo = null;
+      updatePowerButton();
+      updateActionButtons();
+      updateChannelButtons();
+    }, 800);
+  } else {
+    // Power on
+    isPowered = true;
+    updatePowerButton();
+    updateActionButtons();
+    setScreenState('static');
+
+    staticTimer = setTimeout(async () => {
+      setScreenState('loading');
+      const type = CHANNEL_TYPES[currentChannel].id;
+      const cached = allContent[type];
+      if (cached && cached.length > 0) {
+        contentList = cached;
+        currentVideo = cached[0];
+        contentIndex = 0;
+        setScreenState('playing');
+        updateNowPlaying();
+      } else {
+        const content = await fetchContent(type, 0);
+        allContent[type] = content;
+        if (content.length > 0) {
+          contentList = content;
+          currentVideo = content[0];
+          contentIndex = 0;
+          setScreenState('playing');
+          updateNowPlaying();
+        } else {
+          setScreenState('dvd');
+        }
+      }
+      updateChannelButtons();
+      // Preload other channels in background
+      preloadChannels();
+    }, 1500);
+  }
+}
+
+async function preloadChannels() {
+  for (const ch of CHANNEL_TYPES) {
+    if (!allContent[ch.id]) {
+      await new Promise(r => setTimeout(r, 2000));
+      const content = await fetchContent(ch.id, 0);
+      if (content.length > 0) allContent[ch.id] = content;
+      updateGuideChannelCounts();
+    }
+  }
+}
+
+// ============================================================
+// CHANNEL SWITCHING
+// ============================================================
+async function switchToChannel(index) {
+  if (!isPowered) return;
+  currentChannel = index;
+  setScreenState('static');
+  showChannelBannerFn();
+  updateChannelButtons();
+
+  setTimeout(async () => {
+    const type = CHANNEL_TYPES[index].id;
+    const cached = allContent[type];
+    if (cached && cached.length > 0) {
+      contentList = cached;
+      currentVideo = cached[0];
+      contentIndex = 0;
+      setScreenState('playing');
+      updateNowPlaying();
+    } else {
+      setScreenState('loading');
+      const content = await fetchContent(type, 0);
+      allContent[type] = content;
+      if (content.length > 0) {
+        contentList = content;
+        currentVideo = content[0];
+        contentIndex = 0;
+        setScreenState('playing');
+        updateNowPlaying();
+      } else {
+        setScreenState('dvd');
+      }
+    }
+  }, 600);
+}
+
+function handleChannelUp() {
+  if (!isPowered) return;
+  switchToChannel((currentChannel + 1) % CHANNEL_TYPES.length);
+}
+
+function handleChannelDown() {
+  if (!isPowered) return;
+  switchToChannel((currentChannel - 1 + CHANNEL_TYPES.length) % CHANNEL_TYPES.length);
+}
+
+// ============================================================
+// NEXT VIDEO
+// ============================================================
+async function handleNextVideo() {
+  if (!isPowered || contentList.length === 0) return;
+  setScreenState('static');
+  setTimeout(async () => {
+    const nextIndex = contentIndex + 1;
+    if (nextIndex < contentList.length) {
+      contentIndex = nextIndex;
+      currentVideo = contentList[nextIndex];
+      setScreenState('playing');
+      updateNowPlaying();
+    } else {
+      const type = CHANNEL_TYPES[currentChannel].id;
+      const newContent = await fetchContent(type, channelPage + 1);
+      channelPage++;
+      if (newContent.length > 0) {
+        const combined = [...contentList, ...newContent];
+        allContent[type] = combined;
+        contentList = combined;
+        currentVideo = combined[nextIndex] || newContent[0];
+        contentIndex = nextIndex < combined.length ? nextIndex : 0;
+        setScreenState('playing');
+        updateNowPlaying();
+      } else {
+        contentIndex = 0;
+        currentVideo = contentList[0];
+        setScreenState('playing');
+        updateNowPlaying();
+      }
+    }
+  }, 400);
+}
+
+// ============================================================
+// VOLUME
+// ============================================================
+function handleVolumeUp() {
+  if (!isPowered) return;
+  volume = Math.min(100, volume + 10);
+  isMuted = false;
+  showVolumeFn();
+  updateVolumeKnob();
+  updateMuteBtn();
+}
+
+function handleVolumeDown() {
+  if (!isPowered) return;
+  volume = Math.max(0, volume - 10);
+  showVolumeFn();
+  updateVolumeKnob();
+}
+
+function handleMute() {
+  if (!isPowered) return;
+  isMuted = !isMuted;
+  showVolumeFn();
+  updateMuteBtn();
+  // Update iframe src to reflect mute
+  if (currentVideo && screenState === 'playing') {
+    updateIframeSrc();
+  }
+}
+
+function showVolumeFn() {
+  volumeLabelEl.textContent = isMuted ? '🔇 MUTE' : `🔊 VOL ${volume}`;
+  volumeFillEl.style.width = `${isMuted ? 0 : volume}%`;
+  show(volumeBarEl);
+  if (volumeBarTimer) clearTimeout(volumeBarTimer);
+  volumeBarTimer = setTimeout(() => hide(volumeBarEl), 2000);
+}
+
+function updateVolumeKnob() {
+  const angle = (volume / 100) * 270 - 135;
+  volumeKnobIndicator.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+}
+
+function updateMuteBtn() {
+  muteBtn.querySelector('span:first-child').textContent = isMuted ? '🔇' : '🔊';
+}
+
+// ============================================================
+// GUIDE
+// ============================================================
+function handleGuide() {
+  if (!isPowered) return;
+  showGuide = !showGuide;
+  if (showGuide) {
+    openGuide();
+  } else {
+    closeGuide();
+  }
+}
+
+function openGuide() {
+  showGuide = true;
+  guideSelectedChannel = currentChannel;
+  guideSelectedVideo = null;
+  show(channelGuideEl);
+  updateGuideTime();
+  buildGuideChannelList();
+  renderGuideContent();
+  hide(guidePreview);
+}
+
+function closeGuide() {
+  showGuide = false;
+  hide(channelGuideEl);
+}
+
+function updateGuideTime() {
+  guideTime.textContent = new Date().toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
+}
+
+function buildGuideChannelList() {
+  guideChannelsList.innerHTML = '';
+  CHANNEL_TYPES.forEach((ch, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'guide-channel-item' + (guideSelectedChannel === index ? ' active' : '');
+    btn.style.setProperty('--ch-color', ch.color);
+    const count = allContent[ch.id]?.length || 0;
+    btn.innerHTML = `
+      <span class="guide-ch-num">CH ${ch.ch}</span>
+      <span class="guide-ch-icon">${ch.icon}</span>
+      <div class="guide-ch-names">
+        <span class="guide-ch-ar">${ch.name}</span>
+        <span class="guide-ch-en">${ch.nameEn}</span>
+      </div>
+      <span class="guide-ch-count">${count}</span>
+    `;
+    btn.addEventListener('click', () => {
+      guideSelectedChannel = index;
+      guideSelectedVideo = null;
+      buildGuideChannelList();
+      renderGuideContent();
+      hide(guidePreview);
+      // Fetch if needed
+      const type = CHANNEL_TYPES[index].id;
+      if (!allContent[type] || allContent[type].length === 0) {
+        fetchContent(type, 0).then(content => {
+          if (content.length > 0) {
+            allContent[type] = content;
+            renderGuideContent();
+            buildGuideChannelList();
+          }
+        });
+      }
+    });
+    guideChannelsList.appendChild(btn);
+  });
+}
+
+function updateGuideChannelCounts() {
+  if (!showGuide) return;
+  const items = guideChannelsList.querySelectorAll('.guide-channel-item');
+  items.forEach((item, index) => {
+    const countEl = item.querySelector('.guide-ch-count');
+    if (countEl) {
+      const type = CHANNEL_TYPES[index].id;
+      countEl.textContent = allContent[type]?.length || 0;
+    }
+  });
+}
+
+function renderGuideContent() {
+  const type = CHANNEL_TYPES[guideSelectedChannel]?.id;
+  const content = guideSearchQuery ? [] : (allContent[type] || []);
+
+  if (content.length === 0 && !guideSearchQuery) {
+    guideContentArea.innerHTML = `
+      <div class="guide-empty">
+        <div class="guide-empty-icon">📺</div>
+        <div class="guide-empty-text">لا يوجد محتوى متاح</div>
+        <div class="guide-empty-subtext">No content available</div>
+      </div>
+    `;
+    return;
+  }
+
+  const displayContent = guideSearchQuery ? (window._searchResults || []) : content;
+
+  if (displayContent.length === 0) {
+    guideContentArea.innerHTML = `
+      <div class="guide-empty">
+        <div class="guide-empty-icon">🔍</div>
+        <div class="guide-empty-text">لا توجد نتائج</div>
+        <div class="guide-empty-subtext">No results found</div>
+      </div>
+    `;
+    return;
+  }
+
+  const ch = CHANNEL_TYPES[guideSelectedChannel];
+  const grid = document.createElement('div');
+  grid.className = 'guide-video-grid';
+
+  displayContent.forEach(video => {
+    const card = document.createElement('button');
+    card.className = 'guide-video-card' + (guideSelectedVideo?.id === video.id ? ' selected' : '');
+    const thumbHtml = video.thumbnail
+      ? `<img src="${video.thumbnail}" alt="${video.titleAr}" class="guide-thumb-img" onerror="this.style.display='none'" />`
+      : `<div class="guide-thumb-placeholder">${ch.icon}</div>`;
+    card.innerHTML = `
+      <div class="guide-video-thumb">
+        ${thumbHtml}
+        <div class="guide-video-year">${video.year}</div>
+      </div>
+      <div class="guide-video-info">
+        <div class="guide-video-title-ar">${video.titleAr}</div>
+        ${video.stars ? `<div class="guide-video-stars">⭐ ${video.stars}</div>` : ''}
+        ${video.duration ? `<div class="guide-video-duration">⏱ ${video.duration}</div>` : ''}
+      </div>
+    `;
+    card.addEventListener('click', () => {
+      guideSelectedVideo = video;
+      renderGuideContent();
+      showGuidePreview(video);
+    });
+    card.addEventListener('dblclick', () => {
+      selectVideoFromGuide(video, guideSelectedChannel);
+    });
+    grid.appendChild(card);
+  });
+
+  guideContentArea.innerHTML = '';
+  guideContentArea.appendChild(grid);
+}
+
+function showGuidePreview(video) {
+  document.getElementById('previewTitle').textContent = video.titleAr;
+  document.getElementById('previewYear').textContent = video.year;
+  const descEl = document.getElementById('previewDesc');
+  const starsEl = document.getElementById('previewStars');
+  const dirEl = document.getElementById('previewDirector');
+  if (video.description) { descEl.textContent = video.description; show(descEl); } else hide(descEl);
+  if (video.stars) { starsEl.textContent = `بطولة: ${video.stars}`; show(starsEl); } else hide(starsEl);
+  if (video.director) { dirEl.textContent = `إخراج: ${video.director}`; show(dirEl); } else hide(dirEl);
+  show(guidePreview);
+}
+
+function selectVideoFromGuide(video, channelIndex) {
+  closeGuide();
+  currentChannel = channelIndex;
+  updateChannelButtons();
+  setScreenState('static');
+  setTimeout(() => {
+    currentVideo = video;
+    setScreenState('playing');
+    updateNowPlaying();
+  }, 600);
+}
+
+// Guide search
+let searchDebounce = null;
+guideSearchInput.addEventListener('input', (e) => {
+  guideSearchQuery = e.target.value;
+  if (searchDebounce) clearTimeout(searchDebounce);
+  if (!guideSearchQuery.trim()) {
+    window._searchResults = [];
+    renderGuideContent();
+    return;
+  }
+  searchDebounce = setTimeout(async () => {
+    show(searchSpinner);
+    try {
+      const type = CHANNEL_TYPES[guideSelectedChannel]?.id || 'movie';
+      const instance = INVIDIOUS_INSTANCES[instanceIndex % INVIDIOUS_INSTANCES.length];
+      instanceIndex++;
+      const url = `${instance}/api/v1/search?q=${encodeURIComponent(guideSearchQuery + ' مصري')}&type=video&fields=videoId,title,author,lengthSeconds,videoThumbnails`;
+      const resp = await fetch(url, { signal: AbortSignal.timeout(8000) });
+      const data = await resp.json();
+      window._searchResults = (Array.isArray(data) ? data : []).slice(0, 15).map((item, i) => ({
+        id: item.videoId + '_s' + i,
+        youtubeId: item.videoId,
+        title: item.title,
+        titleAr: item.title,
+        year: 1990 + Math.floor(Math.random() * 10),
+        type,
+        thumbnail: item.videoThumbnails?.[0]?.url || '',
+        description: '',
+        stars: item.author || '',
+        director: '',
+        duration: item.lengthSeconds ? formatDuration(item.lengthSeconds) : '',
+      }));
+    } catch {
+      window._searchResults = [];
+    } finally {
+      hide(searchSpinner);
+      renderGuideContent();
+    }
+  }, 600);
+});
+
+// Guide close button
+document.getElementById('guideCloseBtn').addEventListener('click', closeGuide);
+
+// Guide watch button
+guideWatchBtn.addEventListener('click', () => {
+  if (guideSelectedVideo) selectVideoFromGuide(guideSelectedVideo, guideSelectedChannel);
+});
+
+// ============================================================
+// NOW PLAYING & IFRAME
+// ============================================================
+function updateNowPlaying() {
+  if (currentVideo) {
+    nowPlayingTitle.textContent = currentVideo.titleAr;
+    nowPlayingYear.textContent = currentVideo.year;
+    updateIframeSrc();
+  }
+}
+
+function updateIframeSrc() {
+  if (!currentVideo || !currentVideo.youtubeId) {
+    youtubeIframe.src = '';
+    return;
+  }
+  const muteParam = isMuted ? 1 : 0;
+  youtubeIframe.src = `https://www.youtube.com/embed/${currentVideo.youtubeId}?autoplay=1&mute=${muteParam}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&playsinline=1`;
+}
+
+// ============================================================
+// CHANNEL BANNER
+// ============================================================
+function showChannelBannerFn() {
+  const ch = CHANNEL_TYPES[currentChannel];
+  bannerChNum.textContent = `CH ${ch.ch}`;
+  bannerChIcon.textContent = ch.icon;
+  bannerChNameAr.textContent = ch.name;
+  bannerChNameEn.textContent = ch.nameEn;
+  show(channelBannerEl);
+  if (channelBannerTimer) clearTimeout(channelBannerTimer);
+  channelBannerTimer = setTimeout(() => hide(channelBannerEl), 3000);
+}
+
+// ============================================================
+// UI UPDATES
+// ============================================================
+function updatePowerButton() {
+  if (isPowered) {
+    powerBtn.classList.remove('off');
+    powerBtn.classList.add('on');
+  } else {
+    powerBtn.classList.remove('on');
+    powerBtn.classList.add('off');
+  }
+}
+
+function updateActionButtons() {
+  muteBtn.disabled = !isPowered;
+  nextBtn.disabled = !isPowered;
+  guideBtn.disabled = !isPowered;
+}
+
+function updateBrightness(val) {
+  brightness = val;
+  tvScreen.style.filter = `brightness(${brightness / 100})`;
+}
+
+// ============================================================
+// EVENT LISTENERS
+// ============================================================
+powerBtn.addEventListener('click', handlePower);
+document.getElementById('chUpBtn').addEventListener('click', handleChannelUp);
+document.getElementById('chDownBtn').addEventListener('click', handleChannelDown);
+document.getElementById('channelKnob').addEventListener('click', handleChannelUp);
+document.getElementById('volUpBtn').addEventListener('click', handleVolumeUp);
+document.getElementById('volDownBtn').addEventListener('click', handleVolumeDown);
+muteBtn.addEventListener('click', handleMute);
+nextBtn.addEventListener('click', handleNextVideo);
+guideBtn.addEventListener('click', handleGuide);
+brightnessSlider.addEventListener('input', (e) => updateBrightness(parseInt(e.target.value)));
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  switch (e.key) {
+    case ' ':
+      e.preventDefault();
+      handlePower();
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      handleChannelUp();
+      break;
+    case 'ArrowDown':
+      e.preventDefault();
+      handleChannelDown();
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      handleNextVideo();
+      break;
+    case '+':
+    case '=':
+      handleVolumeUp();
+      break;
+    case '-':
+      handleVolumeDown();
+      break;
+    case 'm':
+    case 'M':
+      handleMute();
+      break;
+    case 'g':
+    case 'G':
+      handleGuide();
+      break;
+    case 'Escape':
+      if (showGuide) closeGuide();
+      break;
+  }
+});
+
+// ============================================================
+// INIT
+// ============================================================
+buildChannelButtons();
+updateVolumeKnob();
+setScreenState('off');
+
+// Update guide time every minute
+setInterval(() => {
+  if (showGuide) updateGuideTime();
+}, 60000);
+</script>
+</body>
+</html>
